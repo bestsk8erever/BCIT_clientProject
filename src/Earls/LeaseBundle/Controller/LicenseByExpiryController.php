@@ -28,6 +28,7 @@ class LicenseByExpiryController extends Controller
         foreach($restaurantlist as $restaurant){
 
             $storeNickname = $restaurant->getStorenickname();
+            $storeId = $restaurant->getRestaurantid();
 
             $royaltyFee = $restaurant->getRoyaltyfee();
             $advertisingfee = $restaurant->getAdvertisingFee();
@@ -86,7 +87,8 @@ class LicenseByExpiryController extends Controller
                 'royaltyFee' => $royaltyFee,
                 'advertisingFee' => $advertisingfee,
                 'regionalFee' => $regionalmngtfee,
-                'comments' => $comments
+                'comments' => $comments,
+                'restaurantId' => $storeId
             );
 
             array_push($restaurantArray, $restaurantObj);

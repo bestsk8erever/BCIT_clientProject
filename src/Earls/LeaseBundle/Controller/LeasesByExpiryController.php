@@ -32,6 +32,8 @@ class LeasesByExpiryController extends Controller
 
             $storeNickname = $restaurant->getStorenickname();
 
+            $storeId = $restaurant->getRestaurantid();
+
             $restaurantStoreClass = $restaurant->getStoreclassid();
 
             if(empty($restaurantStoreClass)){
@@ -85,7 +87,8 @@ class LeasesByExpiryController extends Controller
                 'leaseExpiryDate' => $leaseExpiryDate,
                 'leaseOptionDate' => $leaseOptionDate,
                 'leaseOptionDeadline' => $leaseOptionDeadline,
-                'leaseRenewalComments' =>$leaseRenewalComments
+                'leaseRenewalComments' =>$leaseRenewalComments,
+                'restaurantId' => $storeId
             );
 
             array_push($restaurantArray, $restaurantObj);

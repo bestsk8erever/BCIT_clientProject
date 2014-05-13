@@ -388,9 +388,29 @@
                         <li class="previous"><a href="#page1" data-toggle="tab">Previous</a></li>
                         <li class="next"><a href="#page2" data-toggle="tab">Next</a></li>
                     </ul>
+
                  </div>
             </div>
         </div>
     </div>
 
 {% endblock %}
+
+{% block javascript %}
+    <script>
+        $( document ).ready(function() {
+            $(".previous").attr('class', 'previous disabled');
+        });
+
+        $(".next").click(function(){
+            $(".previous").attr('class', 'previous');
+            $(".next").attr('class', 'next disabled');
+        });
+
+        $(".previous").click(function(){
+            $(".previous").attr('class', 'previous disabled');
+            $(".next").attr('class', 'next');
+        });
+    </script>
+{% endblock %}
+

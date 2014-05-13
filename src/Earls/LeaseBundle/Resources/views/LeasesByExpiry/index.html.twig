@@ -26,7 +26,7 @@
                 <tbody>
                 {% for lease in leasesByExpiry %}
                     <tr>
-                        <td> {{ lease.storeNickName }}</td>
+                        <td> <a href="{{ path('_summary_get_id', {'id': lease.restaurantId}) }}">{{ lease.storeNickName }}</a></td>
                         <td> {{ lease.storeClass }}</td>
                         <td>{{ lease.leaseExpiryDate }}</td>
                         <td>{{ lease.leaseOptionDate }}</td>
@@ -47,9 +47,12 @@
 
     <script>
         jQuery(document).ready(function() {
-            $('.datatable').dataTable();
+            $('.datatable').dataTable({
+                "iDisplayLength": 25
+            });
             App.setPage("dynamic_table");  //Set current page
             App.init(); //Initialise plugins and elements
         });
     </script>
+
 {% endblock %}
