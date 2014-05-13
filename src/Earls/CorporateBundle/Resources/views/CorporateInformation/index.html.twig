@@ -72,6 +72,8 @@
     }
     }) }}
 
+
+        <!-- ********** CORP INFO TABLE *********** -->
     <div class="row">
     <div class="col-md-6">
         <div class="box border blue">
@@ -245,6 +247,8 @@
         </div>
     </div>
     
+	<!-- ********** OFFICE TABLE *********** -->
+    
         <div class="col-md-6">
         <div class="box border blue">
             <div class="box-title">
@@ -303,6 +307,9 @@
         </div>
         </div>
         
+        
+        <!-- ********** JURISDICTION TABLE *********** -->
+        
         <div class="col-md-6">
         <div class="box border purple">
             <div class="box-title">
@@ -319,38 +326,56 @@
 					<tr>
 						<td>
 							<div class="form-group">
-		                    <label class="col-sm-3 control-label">Jurisdiction:</label>
-		                    <div class="col-sm-9">
+		                    <label class="col-sm-9 control-label">Jurisdiction:</label>
+		                    </div>
+
+						</td>
+						<td>
+							<div class="form-group">
+		                    <label class="col-sm-9 control-label">Date Registered:</label>
+		                	</div>
+		                	
+						</td>
+						
+						<td>
+							<div class="form-group">
+		                    <label class="col-sm-9 control-label">Registration No:</label>
+		                	</div>
+
+						</td>	
+					</tr>
+					
+					<tr>
+						<td>
+							<div class="form-group">
+		                    <div class="col-sm-10">
 		                        {{ form_widget(corpInfoForm2.corporationInfo.provincestateid, {
 		                        'attr': {'class': 'form-control'}
 		                        }) }}
 		                    </div> 
 		                    </div>
 						</td>
-					</tr>
-					<tr>
+						
 						<td>
 							<div class="form-group">
-		                    <label class="col-sm-3 control-label">Date Registered:</label>
-		                    <div class="col-sm-9">
+		                    <div class="col-sm-10">
 		                        {{ form_widget(corpInfoForm2.corporationInfo.registrationdate, {
-		                        'attr': {'class': 'form-control'}
+		                        'attr': {'form':'corpinfo'}
 		                        }) }}
 		                    </div>
 		                	</div>
-		                	</td>
-					</tr>
-										<tr>
+		                </td>
+		                
 						<td>
 							<div class="form-group">
-		                    <label class="col-sm-3 control-label">Registration No:</label>
-		                    <div class="col-sm-9">
+		                    <div class="col-sm-10">
 		                        {{ form_widget(corpInfoForm2.corporationInfo.registrationnumber, {
 		                        'attr': {'class': 'form-control'}
 		                        }) }}
 		                    </div>
 		                	</div>
-		                	</td>
+		                </td>
+		                
 					</tr>
 
 				</table>
@@ -359,6 +384,9 @@
         </div>
         </div>
 
+
+        <!-- ********** DIRECTORS TABLE *********** -->
+        
         <div class="col-md-6">
         <div class="box border green">
             <div class="box-title">
