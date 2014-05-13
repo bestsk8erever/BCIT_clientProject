@@ -13,7 +13,7 @@
     <field name="registrationdate" type="date" column="registrationDate" nullable="true"/>
     <field name="seal" type="boolean" column="seal" nullable="true"/>
     <field name="locationseal" type="string" column="locationSeal" length="255" nullable="true"/>
-    <field name="capitalstructrue" type="string" column="capitalStructrue" length="255" nullable="true"/>
+    <field name="capitalstructure" type="string" column="capitalStructure" length="255" nullable="true"/>
     <field name="namechanges" type="string" column="nameChanges" length="255" nullable="true"/>
     <field name="corpstatus" type="boolean" column="corpStatus" nullable="true"/>
     <field name="dissolutiondate" type="date" column="dissolutionDate" nullable="true"/>

@@ -120,6 +120,19 @@ class Corporations
      *   @ORM\JoinColumn(name="registeredOfficeID", referencedColumnName="registeredOfficeID")
      * })
      */
+     
+    private $officeid;
+
+    /**
+     * @var \Earls\CorporateBundle\Entity\Offices
+     *
+     * @ORM\ManyToOne(targetEntity="Earls\CorporateBundle\Entity\Offices")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="OfficeID", referencedColumnName="OfficeID")
+     * })
+     */
+
+     
     private $registeredofficeid;
 
     /**
@@ -452,6 +465,19 @@ class Corporations
     {
         return $this->corporateid;
     }
+    
+        public function setOfficeid(\Earls\CorporateBundle\Entity\Offices $officeid = null)
+    {
+        $this->Officeid = $officeid;
+    
+        return $this;
+    }
+
+        public function getOfficeid()
+    {
+        return $this->officeid;
+    }
+
 
     /**
      * Set registeredofficeid

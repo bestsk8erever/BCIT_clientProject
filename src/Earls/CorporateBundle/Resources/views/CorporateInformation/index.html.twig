@@ -1,5 +1,332 @@
+
 {% extends "EarlsLeaseBundle::layout.html.twig" %}
 {% block body %}
-<p>
-corporate information page </p>
+    {% set version = constant('Symfony\\Component\\HttpKernel\\Kernel::MAJOR_VERSION') ~ '.' ~ constant('Symfony\\Component\\HttpKernel\\Kernel::MINOR_VERSION') %}
+
+    <!-- CONTENT HEADER -->
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="page-header">
+                <div class="clearfix">
+                    <h3 class="content-title pull-left">Corporate Information</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- /CONTENT HEADER -->
+    <!-- RESTAURANT FINDER FORM -->
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="box border blue">
+                        <div class="box-body big">
+                            <h3 class="form-title">Find Corporation By Name</h3>
+
+                            {{ form_start(corpFinderForm, {'attr': {'role': 'form', 'class': 'form-inline'} }) }}
+
+                            {{ form_errors(corpFinderForm) }}
+                            <div class="form-group">
+                                {{ form_row(corpFinderForm.corporation, {'label': 'Nick Name',
+                                'label_attr': {'class': 'sr-only'},
+                                'attr': {'class': 'form-control'}
+                                }) }}
+                            </div>
+                            {{ form_widget(corpFinderForm.Go, {'attr': {'class': 'btn btn-info'} }) }}
+
+                            <button class="btn btn-small btn-success" type="button"
+                                    onclick="javascript:window.location.href='{{ path('_addStore') }}'">
+                                <i class="fa fa-plus"></i>
+                                Add a Store
+                            </button>
+
+                            {{ form_end(corpFinderForm) }}
+
+                            <div>
+                                <button class="btn btn-small btn-pink" type="button">
+                                       
+                                    Lease Information
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- /RESTAURANT FINDER FORM -->
+
+    <div class="separator"></div>
+ <!-- FORMS -->
+
+    {{ form_start(corpInfoForm, {
+    'attr': {
+    'role': 'form',
+    'class': 'form-horizontal',
+    'id':'corpinfo'
+    }
+    }) }}
+
+    <div class="row">
+    <div class="col-md-6">
+        <div class="box border blue">
+            <div class="box-title">
+                <h4>Corporation Info</h4>
+            </div>
+            <div class="box-body big">
+                {{ form_errors(corpInfoForm) }}
+                
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">Corporation File No.</label>
+                    <div class="col-sm-9">
+                        {{ form_widget(corpInfoForm.corporationInfo.filenumber, {
+                        'attr': {'class': 'form-control'}
+                        }) }}
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">Corporation Name</label>
+                    <div class="col-sm-9">
+                        {{ form_widget(corpInfoForm.corporationInfo.corporatename, {'label': 'Corporation Name',
+                        'label_attr': {'class': 'control-label'},
+                        'attr': {'class': 'form-control'}
+                        }) }}
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">Resp. Solicitor:</label>
+                    <div class="col-sm-9">
+                        {{ form_widget(corpInfoForm.corporationInfo.respsolicitor, {'label': 'Resp Solicitor',
+                        'label_attr': {'class': 'control-label'},
+                        'attr': {'class': 'form-control'}
+                        }) }}
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">Use:</label>
+                    <div class="col-sm-9">
+                        {{ form_widget(corpInfoForm.corporationInfo.usage, {
+                        'attr': {'class': 'form-control'}
+                        }) }}
+                    </div>
+                </div>
+                                
+                
+                    <table style="width: 100%">
+						<tr>
+						
+						<td style="height: 61px">
+											
+							<div class="form-group">
+		                    <label class="col-sm-3 control-label">Jurisdiction:</label>
+		                    <div class="col-sm-9">
+		                        {{ form_widget(corpInfoForm.corporationInfo.provincestateid, {
+		                        'attr': {'class': 'form-control'}
+		                        }) }}
+		                    </div> 
+		                    </div>
+		                    
+		                </td>
+
+						<td style="height: 61px">	
+										
+							<div class="form-group">
+		                    <label class="col-sm-4 control-label">Fiscal Year End:</label>
+		                    <div class="col-sm-8">
+		                        {{ form_widget(corpInfoForm.corporationInfo.fiscalyearend, {
+		                        'attr': {'class': 'form-control'}
+		                        }) }}
+		                    </div>
+		                	</div>
+		                
+						</td>
+						
+						</tr>
+						<tr>
+						
+						<td>  
+							<div class="form-group">
+		                    <label class="col-sm-3 control-label">Reg. No:</label>
+		                    <div class="col-sm-9">
+		                        {{ form_widget(corpInfoForm.corporationInfo.registrationnumber, {
+		                        'attr': {'class': 'form-control'}
+		                        }) }}
+		                    </div>
+		                	</div>
+            
+               			</td>
+
+						<td>
+							<div class="form-group">
+		                    <label class="col-sm-4 control-label">Reg. Date:</label>
+		                    <div class="col-sm-5">
+		                        {{ form_widget(corpInfoForm.corporationInfo.registrationdate, {
+		                        'attr': {'form': 'corpinfo'}
+		                        }) }}
+		                    </div>
+		                	</div>
+
+						</td>
+						
+						</tr>
+						<tr>
+						<td>
+							<div class="form-group">
+		                    <label class="col-sm-3 control-label">Seal:</label>
+		                    <div class="col-sm-9">
+		                        {{ form_widget(corpInfoForm.corporationInfo.seal, {
+		                        'attr': {'class': 'checkbox', 'form':'coprinfo'}
+		                        }) }}
+		                    </div>
+		                	</div>
+
+						</td>
+
+						<td>
+						
+							<div class="form-group">
+		                    <label class="col-sm-4 control-label">Location Of Seal:</label>
+		                    <div class="col-sm-8">
+		                        {{ form_widget(corpInfoForm.corporationInfo.locationseal, {
+		                        'attr': {'class': 'form-control'}
+		                        }) }}
+		                    </div>
+		                	</div>
+
+						</td>
+						
+						</tr>
+					</table>
+   
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">Capital Structure:</label>
+                    <div class="col-sm-9">
+                        {{ form_widget(corpInfoForm.corporationInfo.capitalstructure, {
+                        'attr': {'class': 'form-control'}
+                        }) }}
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">Name Changes:</label>
+                    <div class="col-sm-9">
+                        {{ form_widget(corpInfoForm.corporationInfo.namechanges, {
+                        'attr': {'class': 'form-control'}
+                        }) }}
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">Active?</label>
+                    <div class="col-sm-9">
+                        {{ form_widget(corpInfoForm.corporationInfo.corpstatus, {
+                        'attr': {'class': 'checkbox', 'form':'corpinfo'}
+                        }) }}
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">Dissolution Date:</label>
+                    <div class="col-sm-9">
+                        {{ form_widget(corpInfoForm.corporationInfo.dissolutiondate, {
+                        'attr': {'form':'corpinfo'}
+                        }) }}
+                    </div>
+                </div>	
+            </div>
+        </div>
+    </div>
+    
+        <div class="col-md-6">
+        <div class="box border blue">
+            <div class="box-title">
+                <h4>Offices</h4>
+            </div>
+            <div class="box-body big">
+            
+            	<table style="width: 100%">
+					<tr>
+						<td>Registered</td>
+						<td>Records</td>
+					</tr>
+					<tr>
+					
+						<td>
+							<div class="form-group">
+		                    <label class="col-sm-3 control-label">Office:</label>
+		                    <div class="col-sm-9">
+		                        {{ form_widget(corpInfoForm.corporationInfo.officeid, {
+		                        'attr': {'class': 'form-control'}
+		                        }) }}
+		                    </div>
+		                	</div>
+						</td>
+						
+						
+						<td>
+							<div class="form-group">
+		                    <label class="col-sm-3 control-label">Office:</label>
+		                    <div class="col-sm-9">
+		                        {{ form_widget(corpInfoForm.corporationInfo.officeid, {
+		                        'attr': {'class': 'form-control'}
+		                        }) }}
+		                    </div>
+		                	</div>
+						</td>
+						
+					</tr>
+					<tr>
+					
+						<td>
+						<div class="form-group">
+		                    <label class="col-sm-3 control-label">Address:</label>
+		                    <div class="col-sm-9">
+		                        {{ form_widget(corpInfoForm.officeInfo.address, {
+		                        'attr': {'class': 'form-control'}
+		                        }) }}
+		                </div>
+		                </div>
+
+						
+						</td>
+						
+						
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td style="height: 23px"></td>
+						<td style="height: 23px"></td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+					</tr>
+				</table>
+            
+            </div>
+        </div>
+        </div>
+
+    
+    
+    </div>   
+
+            
+            </div>
+        </div>
+    </div>
+   
+
 {% endblock %}

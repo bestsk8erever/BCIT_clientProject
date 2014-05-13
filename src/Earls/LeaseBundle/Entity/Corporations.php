@@ -78,9 +78,9 @@ class Corporations
     /**
      * @var string
      *
-     * @ORM\Column(name="capitalStructrue", type="string", length=255, nullable=true)
+     * @ORM\Column(name="capitalStructure", type="string", length=255, nullable=true)
      */
-    private $capitalstructrue;
+    private $capitalstructure;
 
     /**
      * @var string
@@ -352,26 +352,26 @@ class Corporations
     }
 
     /**
-     * Set capitalstructrue
+     * Set capitalstructure
      *
-     * @param string $capitalstructrue
+     * @param string $capitalstructure
      * @return Corporations
      */
-    public function setCapitalstructrue($capitalstructrue)
+    public function setCapitalstructure($capitalstructure)
     {
-        $this->capitalstructrue = $capitalstructrue;
+        $this->capitalstructure = $capitalstructure;
     
         return $this;
     }
 
     /**
-     * Get capitalstructrue
+     * Get capitalstructure
      *
      * @return string 
      */
-    public function getCapitalstructrue()
+    public function getCapitalstructure()
     {
-        return $this->capitalstructrue;
+        return $this->capitalstructure;
     }
 
     /**
