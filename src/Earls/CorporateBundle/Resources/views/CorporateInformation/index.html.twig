@@ -255,38 +255,26 @@
             	<table style="width: 100%">
 					<tr>
 						<td>Registered</td>
+					</tr>
+					<tr>
+					
+						<td>
+							<div class="form-group">
+		                    <label class="col-sm-3 control-label">Office:</label>
+		                    <div class="col-sm-9">
+		                        {{ form_widget(corpInfoForm.corporationInfo.officeid, {
+		                        'attr': {'class': 'form-control'}
+		                        }) }}
+		                    </div>
+		                	</div>
+						</td>
+					</tr>
+					<tr>
+					
 						<td>Records</td>
-					</tr>
-					<tr>
-					
-						<td>
-							<div class="form-group">
-		                    <label class="col-sm-3 control-label">Office:</label>
-		                    <div class="col-sm-9">
-		                        {{ form_widget(corpInfoForm.corporationInfo.officeid, {
-		                        'attr': {'class': 'form-control'}
-		                        }) }}
-		                    </div>
-		                	</div>
-						</td>
 						
 						
-						<td>
-							<div class="form-group">
-		                    <label class="col-sm-3 control-label">Office:</label>
-		                    <div class="col-sm-9">
-		                        {{ form_widget(corpInfoForm.corporationInfo.officeid, {
-		                        'attr': {'class': 'form-control'}
-		                        }) }}
-		                    </div>
-		                	</div>
-						</td>
-						
-					</tr>
-					<tr>
-					
-						<td>
-						<div class="form-group">
+					<!--	<div class="form-group">
 		                    <label class="col-sm-3 control-label">Address:</label>
 		                    <div class="col-sm-9">
 		                        {{ form_widget(corpInfoForm.officeInfo.address, {
@@ -294,16 +282,20 @@
 		                        }) }}
 		                </div>
 		                </div>
-
-						
-						</td>
-						
-						
-						<td>&nbsp;</td>
+		                
+		                -->
 					</tr>
 					<tr>
-						<td>&nbsp;</td>
-						<td>&nbsp;</td>
+						<td>
+							<div class="form-group">
+		                    <label class="col-sm-3 control-label">Office:</label>
+		                    <div class="col-sm-9">
+		                        {{ form_widget(corpInfoForm2.corporationInfo.officeid, {
+		                        'attr': {'class': 'form-control'}
+		                        }) }}
+		                    </div>
+		                	</div>
+		                	</td>
 					</tr>
 					<tr>
 						<td style="height: 23px"></td>

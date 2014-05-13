@@ -182,6 +182,7 @@ class CorporateInformationController extends Controller
             array(
                 'corpFinderForm' => $formRequested->createView(),
                 'corpInfoForm' => $corpInfoForm->createView(),
+                'corpInfoForm2' => $corpInfoForm->createView(),
                 'allCorporations' => $allCorporations,
              //   'RegisteredObj' => $registeredOfficesObj,
                // 'totals' => array('totalSeats' => $totalSeats, 'totalTables' => $totalTables),
